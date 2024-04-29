@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nxt_gen_guidance/pages/mentor_profile_page.dart';
 
 class RecommendedMentorCard extends StatelessWidget {
   final String mentorName;
@@ -11,12 +12,17 @@ class RecommendedMentorCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      color: Color.fromRGBO(66, 119, 142, 0.088),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      child: Container(
-          height: 270,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => MentorProfilePage()));
+      },
+      child: Card(
+        elevation: 0,
+        color: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Container(
+          height: 300,
           width: 210,
           child: Column(
             children: [
@@ -34,9 +40,12 @@ class RecommendedMentorCard extends StatelessWidget {
                 mentorName,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-              Text(
-                "Specializes in:",
-                style: TextStyle(fontSize: 15),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Senior Software Engineer at Amazon",
+                  style: TextStyle(fontSize: 15),
+                ),
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -66,13 +75,20 @@ class RecommendedMentorCard extends StatelessWidget {
                 child: Text("Book Mentorship"),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromRGBO(66, 119, 142, 1)),
+                      Color.fromARGB(255, 10, 38, 118)),
                   foregroundColor: MaterialStateProperty.all<Color>(
                       Color.fromARGB(255, 255, 255, 255)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
                 ),
-              )
+              ),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -84,7 +100,9 @@ class ChipBelowAvatarImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        backgroundColor: Color.fromARGB(255, 236, 237, 240),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        side: BorderSide.none,
         label: Text(skill));
   }
 }

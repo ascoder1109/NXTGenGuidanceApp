@@ -24,13 +24,21 @@ class DrawerWidget extends StatelessWidget {
             "User Sharma",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
           ),
-          TextButton(
-              onPressed: () {},
-              child: Text(
-                "View Profile",
-                style: TextStyle(
-                    fontSize: 20, color: Color.fromRGBO(66, 119, 142, 1)),
-              ))
+          ElevatedButton(
+            onPressed: () {},
+            child: Text("View Profile"),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(
+                  Color.fromARGB(255, 10, 38, 118)),
+              foregroundColor: MaterialStateProperty.all<Color>(
+                  Color.fromARGB(255, 255, 255, 255)),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
