@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nxt_gen_guidance/colors.dart';
 import 'package:nxt_gen_guidance/widgets/community_card.dart';
 import 'package:nxt_gen_guidance/widgets/drawer_widget.dart';
 import 'package:nxt_gen_guidance/widgets/recommended_mentor_card.dart';
@@ -27,8 +28,12 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDarkMode ? kAppDarkBackgroundColor : kAppLightBackgroundColor;
+    final textColor = isDarkMode ? Colors.white : Colors.black;
     return Scaffold(
-      backgroundColor: const Color.fromARGB(249, 250, 251, 255),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: const Text("NXTGenGuidance"),
       ),
@@ -123,7 +128,7 @@ class _HomePageState extends State<HomePage> {
         ],
         currentIndex: _selectedIndex,
         unselectedItemColor: Color.fromARGB(255, 165, 187, 248),
-        selectedItemColor: Color.fromARGB(255, 10, 38, 118),
+        selectedItemColor: kBlueColor,
         onTap: _onItemTapped,
       ),
     );

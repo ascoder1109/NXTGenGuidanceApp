@@ -8,14 +8,14 @@ class MentorProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(249, 250, 251, 255),
       appBar: AppBar(
-        title: Text("Mentor Profile"),
+        title: const Text("Mentor Profile"),
       ),
-      body: Padding(
+      body: const Padding(
         padding: const EdgeInsets.all(17.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
             Center(
@@ -24,7 +24,7 @@ class MentorProfilePage extends StatelessWidget {
                 radius: 100,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
             Center(

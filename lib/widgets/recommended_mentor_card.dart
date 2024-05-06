@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nxt_gen_guidance/colors.dart';
 import 'package:nxt_gen_guidance/pages/mentor_profile_page.dart';
 
-class RecommendedMentorCard extends StatelessWidget {
+class RecommendedMentorCard extends StatefulWidget {
   final String mentorName;
   final String avatarProfileLocation;
   RecommendedMentorCard(
@@ -11,7 +12,16 @@ class RecommendedMentorCard extends StatelessWidget {
       required this.avatarProfileLocation});
 
   @override
+  State<RecommendedMentorCard> createState() => _RecommendedMentorCardState();
+}
+
+class _RecommendedMentorCardState extends State<RecommendedMentorCard> {
+  @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDarkMode ? kCardDarkBackgroundColor : kCardLightBackgroundColor;
+    final textColor = isDarkMode ? Colors.white : Colors.black;
     return GestureDetector(
       onTap: () {
         Navigator.of(context)
@@ -19,7 +29,7 @@ class RecommendedMentorCard extends StatelessWidget {
       },
       child: Card(
         elevation: 0,
-        color: Colors.white,
+        color: backgroundColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: Container(
           height: 300,
@@ -30,14 +40,14 @@ class RecommendedMentorCard extends StatelessWidget {
                 height: 12,
               ),
               CircleAvatar(
-                backgroundImage: AssetImage(avatarProfileLocation),
+                backgroundImage: AssetImage(widget.avatarProfileLocation),
                 radius: 40,
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                mentorName,
+                widget.mentorName,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               Padding(
@@ -74,8 +84,7 @@ class RecommendedMentorCard extends StatelessWidget {
                 onPressed: () {},
                 child: Text("Book Mentorship"),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromARGB(255, 10, 38, 118)),
+                  backgroundColor: MaterialStateProperty.all<Color>(kBlueColor),
                   foregroundColor: MaterialStateProperty.all<Color>(
                       Color.fromARGB(255, 255, 255, 255)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -99,8 +108,11 @@ class ChipBelowAvatarImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Chip(
-        backgroundColor: Color.fromARGB(255, 236, 237, 240),
+        backgroundColor: isDarkMode
+            ? Color.fromARGB(255, 20, 20, 20)
+            : Color.fromARGB(255, 208, 208, 208),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         side: BorderSide.none,
         label: Text(skill));

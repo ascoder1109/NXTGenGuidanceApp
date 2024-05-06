@@ -1,24 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:nxt_gen_guidance/pages/home_page.dart';
-import 'package:nxt_gen_guidance/pages/mentor_profile_page.dart';
+import 'package:nxt_gen_guidance/colors.dart';
+import 'package:nxt_gen_guidance/pages/login_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
+    final lightTheme = ThemeData(
+        // brightness: Brightness.0,
+        // primaryColor: kVioletColor,
+        colorSchemeSeed: kBlueColor
+        // backgroundColor: kLightBackgroundColor,
+        // Define other light theme properties as needed
+        );
+
+    final darkTheme = ThemeData(
+        brightness: Brightness.dark,
+        // primaryColor: kVioletColor,
+        colorSchemeSeed: kBlueColor
+        // backgroundColor: kDarkBackgroundColor,
+        // Define other dark theme properties as needed
+        );
+
     return MaterialApp(
-      home: HomePage(),
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 10, 38, 118),
-        ),
-      ),
+      title: "Shopping List App",
+      home: const LoginPage(),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.system,
+      // Use system theme mode (light/dark)
     );
   }
 }
