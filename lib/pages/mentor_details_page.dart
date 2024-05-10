@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MentorProfilePage extends StatelessWidget {
-  const MentorProfilePage({super.key});
+class MentorDetailsPage extends StatelessWidget {
+  const MentorDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(249, 250, 251, 255),
       appBar: AppBar(
         title: const Text("Mentor Profile"),
       ),
@@ -37,16 +36,11 @@ class MentorProfilePage extends StatelessWidget {
               height: 8,
             ),
             Text(
-              "Senior Software Engineer at Amazon",
+              "Senior Software Engineer @Amazon",
               style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 8,
-            ),
-            Text(
-              "ML Research Scientist gone Entrepreneur helping SWE, SDM, and MLEs getting deeper into research.",
-              style: TextStyle(
-                  fontSize: 20, color: Color.fromARGB(255, 10, 38, 118)),
             ),
           ],
         ),
