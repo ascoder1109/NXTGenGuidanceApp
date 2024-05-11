@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nxt_gen_guidance/colors.dart';
-import 'package:nxt_gen_guidance/pages/mentor_details_page.dart';
+import 'package:nxt_gen_guidance/mentor_details/view/mentor_details_page.dart';
 
 class RecommendedMentorCard extends StatelessWidget {
   const RecommendedMentorCard({super.key});
@@ -17,28 +17,28 @@ class RecommendedMentorCard extends StatelessWidget {
               height: 8,
             ),
             CircleAvatar(
+              radius: 32,
               child: Image.asset(
                 "assets/images/avatar_image.png",
               ),
-              radius: 32,
             ),
             const SizedBox(
               height: 16,
             ),
-            Text(
+            const Text(
               "John Doe",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               "Senior Software Engineer",
               style: TextStyle(fontSize: 16),
               overflow: TextOverflow.ellipsis,
               softWrap: true,
             ),
-            Text(
+            const Text(
               "Amazon",
               style: TextStyle(fontSize: 16),
               overflow: TextOverflow.ellipsis,

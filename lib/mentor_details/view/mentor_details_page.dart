@@ -10,7 +10,7 @@ class MentorDetailsPage extends StatelessWidget {
         title: const Text("Mentor Profile"),
       ),
       body: const Padding(
-        padding: const EdgeInsets.all(17.0),
+        padding: EdgeInsets.all(17.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -27,12 +27,12 @@ class MentorDetailsPage extends StatelessWidget {
               height: 20,
             ),
             Center(
-              child: const Text(
+              child: Text(
                 "John Doe",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 8,
             ),
             Text(

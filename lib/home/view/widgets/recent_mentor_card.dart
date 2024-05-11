@@ -19,7 +19,7 @@ class RecentMentorCard extends StatelessWidget {
               const SizedBox(
                 width: 8,
               ),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(

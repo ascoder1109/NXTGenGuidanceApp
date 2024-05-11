@@ -1,13 +1,12 @@
-import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:double_tap_to_exit/double_tap_to_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:nxt_gen_guidance/colors.dart';
-import 'package:nxt_gen_guidance/pages/home_page.dart';
-import 'package:nxt_gen_guidance/pages/meet_page.dart';
-import 'package:nxt_gen_guidance/pages/notification_page.dart';
-import 'package:nxt_gen_guidance/pages/search_page.dart';
-import 'package:nxt_gen_guidance/pages/settings_page.dart';
-import 'package:nxt_gen_guidance/widgets/app_drawer_widget.dart';
+import 'package:nxt_gen_guidance/home/view/home_page.dart';
+import 'package:nxt_gen_guidance/meet/view/meet_page.dart';
+import 'package:nxt_gen_guidance/notifications/view/notification_page.dart';
+import 'package:nxt_gen_guidance/search/view/search_page.dart';
+import 'package:nxt_gen_guidance/settings/view/settings_page.dart';
+import 'package:nxt_gen_guidance/main/view/widgets/app_drawer_widget.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -34,12 +33,12 @@ class _MainPageState extends State<MainPage> {
       child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: Text(
+            title: const Text(
               "NXTGenGuidance",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
-          drawer: AppDrawerWidget(),
+          drawer: const AppDrawerWidget(),
           body: pages[currentPage],
           bottomNavigationBar: BottomNavigationBar(
               backgroundColor: kAppLightBackgroundColor,
@@ -51,7 +50,7 @@ class _MainPageState extends State<MainPage> {
                   currentPage = value;
                 });
               },
-              items: [
+              items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.monitor), label: "Meet"),

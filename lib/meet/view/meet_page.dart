@@ -5,8 +5,6 @@ class MeetPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Meet Page"),
-    );
+    return const Text("Meet Page");
   }
 }
