@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:nxt_gen_guidance/colors.dart';
 
 class AppDrawerWidget extends StatelessWidget {
@@ -14,15 +13,15 @@ class AppDrawerWidget extends StatelessWidget {
             height: 64,
           ),
           CircleAvatar(
+            radius: 64,
             child: Image.asset(
               "assets/images/avatar_image.png",
             ),
-            radius: 64,
           ),
           const SizedBox(
             height: 16,
           ),
-          Text(
+          const Text(
             "User Sharma",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),

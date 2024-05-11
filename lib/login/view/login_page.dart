@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nxt_gen_guidance/colors.dart';
-import 'package:nxt_gen_guidance/pages/sign_up_page.dart';
+import 'package:nxt_gen_guidance/sign_up/view/sign_up_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
