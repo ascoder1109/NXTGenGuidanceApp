@@ -11,6 +11,8 @@ class RecommendedMentorCard extends StatelessWidget {
       width: 240,
       height: 240,
       child: Card(
+        elevation: 0,
+        color: kWhiteColor,
         child: Column(
           children: [
             const SizedBox(

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+class SettingPage extends StatelessWidget {
+  const SettingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Chat Page");
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Settings"),
+        ),
+        body: const Text("Settings Page"));
   }
 }

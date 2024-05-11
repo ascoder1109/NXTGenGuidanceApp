@@ -5,6 +5,11 @@ class MeetPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Meet Page");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Meet Page"),
+      ),
+      body: Text("Meet Page"),
+    );
   }
 }
